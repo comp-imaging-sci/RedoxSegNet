@@ -94,4 +94,4 @@ python test_ddgan_translation_inference.py --data_dir /folder/path/for/test/data
 
 ## Acknowledgments
 
-This code uses libraries from [SynDiff](https://github.com/icon-lab/SynDiff) and [DD-GAN](https://github.com/NVlabs/denoising-diffusion-gan) repository.
+This code uses libraries from [SynDiff](https://github.com/icon-lab/SynDiff) repository.
