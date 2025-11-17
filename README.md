@@ -44,7 +44,7 @@ You should structure your aligned dataset in the following way:
 <br />
 
 ```
-python train_ddgan_translation_microscopy.py --data_dir /folder/path/for/data --image_size 256 --exp exp_RedoxSegNet --num_channels 2 --num_channels_dae 64 --ch_mult 1 1 2 2 4 4 --num_timesteps 4 --num_res_blocks 2 --batch_size 8 --num_epoch 200 --ngf 64 --embedding_type positional --use_ema --r1_gamma 2. --z_emb_dim 256 --lr_d 1e-4 --lr_g 2e-4 --lazy_reg 10  --num_process_per_node 1 --save_content --checkpoint_dir /checkpoints/runs --input_selection --input_channels 0 --out_channels 3  --local_rank 0
+python train_redoxsegnet.py --data_dir /folder/path/for/data --image_size 256 --exp exp_RedoxSegNet --num_channels 2 --num_channels_dae 64 --ch_mult 1 1 2 2 4 4 --num_timesteps 4 --num_res_blocks 2 --batch_size 8 --num_epoch 200 --ngf 64 --embedding_type positional --use_ema --r1_gamma 2. --z_emb_dim 256 --lr_d 1e-4 --lr_g 2e-4 --lazy_reg 10  --num_process_per_node 1 --save_content --checkpoint_dir /checkpoints/runs --input_selection --input_channels 0 --out_channels 3  --local_rank 0
 ```
 
 ### Argument descriptions
@@ -67,12 +67,12 @@ python train_ddgan_translation_microscopy.py --data_dir /folder/path/for/data --
 
 
 
-## Test
+## Inference on test data
 
 <br />
 
 ```
-python test_ddgan_translation_inference.py --data_dir /folder/path/for/test/data --result_dir /folder/path/for/result/ --image_size 256 --num_channels 2 --num_channels_dae 64 --ch_mult 1 1 2 2 4 4 --num_timesteps 4 --num_res_blocks 2 --batch_size 8 --input_selection --input_channels 0 --num_target_channels 1 --checkpoint_model /checkpoints/runs/exp_RedoxSegNet/netG_100.pth
+python inference_redoxsegnet.py --data_dir /folder/path/for/test/data --result_dir /folder/path/for/result/ --image_size 256 --num_channels 2 --num_channels_dae 64 --ch_mult 1 1 2 2 4 4 --num_timesteps 4 --num_res_blocks 2 --batch_size 8 --input_selection --input_channels 0 --num_target_channels 1 --checkpoint_model /checkpoints/runs/exp_RedoxSegNet/netG_100.pth
 ```
 
 <br />
